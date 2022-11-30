@@ -9,3 +9,7 @@ __Linux__
 4. run scripts!
 
 Deactivate virtual environment with `deactivate`
+
+## Resources 
+[openai.Completion.create](https://beta.openai.com/docs/api-reference/completions/create)
+[GPT Tutorial](https://github.com/daveshap/PythonGPT3Tutorial)
