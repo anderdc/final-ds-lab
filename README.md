@@ -10,6 +10,9 @@ __Linux__
 
 Deactivate virtual environment with `deactivate`
 
+## OpenAI API key
+Use your own api key and store it in a file called `.apikey`
+
 ## Resources 
 [openai.Completion.create](https://beta.openai.com/docs/api-reference/completions/create)
 [GPT Tutorial](https://github.com/daveshap/PythonGPT3Tutorial)
