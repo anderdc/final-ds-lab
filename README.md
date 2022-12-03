@@ -1,5 +1,5 @@
 # Chatbot
-Creating a chatbot that acts like Socrates & Marcus Aurelius
+Creating a chatbot that acts like Socrates & a financial guru.
 
 ## Setting up Environment
 __Linux__
