@@ -1,6 +1,11 @@
-#This script is to parse the crito text into two lists, one for crito & one for socrates
+#This script is to parse transcribed text between TWO participants
+#set these variables to the names of the participants (all lower case) + the colon 
+#***************************
+prompter = 'socrates:'     #prompter MUST be the person who starts speaking first
+speaker = 'crito:'
+#**************************
 
-#generator function which returns the text w/ out newlines as a string 
+#returns the text of a file in a string
 def readFile(filename: str):
     with open(filename) as file:
         text = ''
@@ -9,16 +14,18 @@ def readFile(filename: str):
             for word in line:
                 if word != '\n':
                     text = text + word + ' '
-                else:                    # replace any newlines w/ a space
-                    word = ''
-                    text = text + word             
+                else:      # replace any newlines w/ a space
+                    pass           
     return text
 
 
 #function that returns two lists, the 1st w/ socrates' dialogue & the 2nd w/ crito's dialogue
 #for some reason the very last line of the book is not captured
 def separate():
-    text = readFile('data/crito.txt')
+    #***************************
+    text = readFile('data/crito.txt') # change the file to parse the transcript you want
+    #***************************
+
     soc = list()
     crit = list()
     flag = 's'      #set to s b/c he socrates starts talking first, will be set to c when crito is talking
@@ -26,13 +33,13 @@ def separate():
     text = text.split()
     dialogue = ''
     for word in text:
-        if word == 'socrates:':
+        if word == prompter:
             flag = 's'
             if dialogue != '':
                 crit.append(dialogue)
             dialogue = ''
                 
-        elif word == 'crito:':
+        elif word == speaker:
             flag = 'c'
             if dialogue != '':
                 soc.append(dialogue)
@@ -51,13 +58,12 @@ def separate():
 def main():
     soc, crit = separate()
     with open('train/crito_train.json', 'w') as file:
-        file.write('{\"training_data\": [\n')
-        for s, c in zip(soc[1:], crit[1:]):
-            file.write(f'{{\"prompt\": \"{c}\", \"completion\": \"{s}\"}}')     #store data in a way where crito is prompt
+        # file.write('{\"training_data\": [\n')
+        for s, c in zip(soc, crit):
+            file.write(f'{{\"prompt\": \"{c}\", \"completion\": \"{s}\"}}')    
+            file.write('\n')
+            # file.write(',\n')                                                   
+        # file.write(']}')
             
-            file.write(',\n')                                                    # and socrates is the completion
-        file.write(']}')
-            
-
 
 main()
