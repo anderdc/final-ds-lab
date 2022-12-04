@@ -2,7 +2,7 @@
 #set these variables to the names of the participants (all lower case) + the colon 
 #***************************
 prompter = 'socrates:'     #prompter MUST be the person who starts speaking first
-speaker = 'crito:'
+speaker = 'euthyphro:'
 #**************************
 
 #returns the text of a file in a string
@@ -23,7 +23,7 @@ def readFile(filename: str):
 #for some reason the very last line of the book is not captured
 def separate():
     #***************************
-    text = readFile('data/crito.txt') # change the file to parse the transcript you want
+    text = readFile('data/euthyphro.txt') # change the file to parse the transcript you want
     #***************************
 
     soc = list()
@@ -57,7 +57,9 @@ def separate():
 
 def main():
     soc, crit = separate()
-    with open('train/crito_train.json', 'w') as file:
+    #***************************
+    with open('train/euthyphro_train.json', 'w') as file:
+    #***************************
         # file.write('{\"training_data\": [\n')
         for s, c in zip(soc, crit):
             file.write(f'{{\"prompt\": \"{c}\", \"completion\": \"{s}\"}}')    
