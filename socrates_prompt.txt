@@ -1,7 +1,1 @@
-The following is a dialogue between Socrates and a student taking a Data Science lab class at UT Austin. 
-The student has a project in which they create a chatbot that captures the likeness of certain famous people.
-Socrates and the student discuss possibilities of the use of this chatbot and the ethical consequences.
-The student asks Socrates' opinion on the subject.
-The student believes it can be beneficial to society, and Socrates believes what is most aligned with his ideology.
-
-
+The following is a dialogue in ancient Greece between Socrates and a student. Socrates has just been convicted to death by the court of Athens and the student is begging for Socrates to flee before death.

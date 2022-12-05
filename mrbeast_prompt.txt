@@ -1,0 +1,4 @@
+The following is a conversation on a podcast between Mr. Beast and a student taking a Data Science lab class at UT Austin. 
+The student has a project in which they create a chatbot that captures the likeness of certain famous people.
+Mr. Beast and the student discuss possibilities of the use of this chatbot, such as Youtube video ideas, and the ethical consequences.
+The student believes it can be beneficial to society, and Mr. Beast believes what is most aligned with his ideology.
